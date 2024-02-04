@@ -1,0 +1,108 @@
+.row{
+    /* border: 1px solid black; */
+   
+    padding:3px;
+    margin:4px;
+}
+.col-md-6{
+    /* border:1px solid black; */
+    
+}
+
+.col-md-3{
+    /* border:1px solid black; */
+}
+
+.card{
+
+
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+    background-color: #fff;
+    margin:35px;
+    position: inherit;
+    top: 72px;
+    left:192px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+   transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+table thead tr th{
+    background-color: lightskyblue;
+}
+
+table {
+    width: 100%;
+    margin-top: -16px;
+
+}
+
+i{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* .card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+} */

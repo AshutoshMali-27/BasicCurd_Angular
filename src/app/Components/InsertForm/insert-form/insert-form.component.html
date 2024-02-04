@@ -1,0 +1,301 @@
+<!-- <div class="card">
+    <h5 class="card-header">Featured</h5>
+    <div class="card-body">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="lblfirstname" class="form-label">First Name</label>
+
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="txtfirstname">
+                    </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="lbllastname" class="form-label">Last Name</label>
+
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="txtlastname">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="lbladdress" class="form-label">Address</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="txtaddress">
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="lblmobile" class="form-label">mobile</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control" id="txtmobile">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="lblpanno" class="form-label">PanNo</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="txtpanno">
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="lbladdherno" class="form-label">Addher No</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="textaddharno">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="lblpassword" class="form-label">Password</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" class="form-control" id="txtpassword">
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="lblresetpassword" class="form-label">Reset Password</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" class="form-control" id="txtresetpassword">
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div> -->
+
+  <div class="card">
+    <div class="card-header nbg-info">
+        <h6>Employee Registration</h6>
+    </div>
+    <div class="card-body">
+        <form  [formGroup]="empolyeeForm" (ngSubmit)="formsubmit()">
+        <div class="row">
+            <div class="form-group col">
+                <label > Department</label>
+                <select class="form-control" name="department" formControlName="department" [class.is-invalid]="f['department'].invalid && f['department'].touched">
+                    <option value="">--Select Department--</option>
+                    <option value="Accounts">Accounts</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Administrator">Administrator</option>
+                </select>
+                <div class="alert alert-danger" *ngIf="f['department'].invalid && f['department'].touched">
+                    <div *ngIf="f['department'].errors && f['department'].errors['required']">
+                        Department is Required
+                    </div>
+                   
+                    </div>
+            </div>
+           
+            <div class="form-group col">
+                <label > Employee Name</label>
+                <input type="text" class="form-control" name="empName" formControlName="empName" [class.is-invalid]="f['empName'].invalid && f['empName'].touched">
+                <div class="alert alert-danger" *ngIf="f['empName'].invalid && f['empName'].touched">
+                    <div *ngIf="f['empName'].errors && f['empName'].errors['required']">
+                        Employee Name is Required
+                    </div>
+                    <div *ngIf=" f['empName'].errors['minlength']">
+                        Minimum 3 character
+                    </div>
+                    <div *ngIf=" f['empName'].errors['maxlength']">
+                        20 charcater maximum
+                    </div>
+                    </div>
+            </div>
+          
+
+            <div class="form-group col">
+                <label > Mobile No</label>
+                <input type="text" class="form-control" name="mobile" formControlName="mobile" [class.is-invalid]="f['mobile'].invalid && f['mobile'].touched">
+                <div class="alert alert-danger" *ngIf="f['mobile'].invalid && f['mobile'].touched">
+                    <div *ngIf="f['mobile'].errors && f['mobile'].errors['required']">
+                        Mobile No is Required
+                    </div>
+                    <div *ngIf=" f['mobile'].errors['minlength']">
+                        Minimum 10 number
+                    </div>
+                    
+                   
+                    </div>
+            </div>
+         
+        </div>
+        <div class="row mt-2">
+            <div class="form-group col">
+                <label > Grnder</label>
+                <select class="form-control" name="gender" formControlName="gender" [class.is-invalid]="f['gender'].invalid && f['gender'].touched">
+                    <option value="">--Select--</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                   
+                </select>
+                <div class="alert alert-danger" *ngIf="f['gender'].invalid && f['gender'].touched">
+                    <div *ngIf="f['gender'].errors && f['gender'].errors['required']">
+                        Grnder is Required
+                    </div>
+                    </div>
+            </div>
+            
+            <div class="form-group col">
+                <label > Date of Join</label>
+                <input type="date" class="form-control" name="joiningDate" formControlName="joiningDate" [class.is-invalid]="f['joiningDate'].invalid && f['joiningDate'].touched">
+                <div class="alert alert-danger" *ngIf="f['joiningDate'].invalid && f['joiningDate'].touched">
+                    <div *ngIf="f['joiningDate'].errors && f['joiningDate'].errors['required']">
+                        Date of Join is Required
+                    </div>
+                    </div>
+            </div>
+            
+            <div class="form-group col">
+                <label >Email</label>
+                <input type="email" class="form-control" name="email" formControlName="email"  [class.is-invalid]="f['email'].invalid && f['email'].touched">
+
+                <div class="alert alert-danger" *ngIf="f['email'].invalid && f['email'].touched">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                        Email is Required
+                    </div>
+                    </div>
+            </div>
+
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="form-group col">
+                    <label > Salary</label>
+                 <input type="text" class="form-control" name="salary" formControlName="salary"  [class.is-invalid]="f['salary'].invalid && f['salary'].touched">
+                 <div class="alert alert-danger" *ngIf="f['salary'].invalid && f['salary'].touched">
+                    <div *ngIf="f['salary'].errors && f['salary'].errors['required']">
+                        Salary is Required
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="form-group col">
+                    <label >Password</label>
+                    <input type="password" class="form-control" name="password" formControlName="password" [class.is-invalid]="f['password'].invalid && f['password'].touched">
+                    <div class="alert alert-danger" *ngIf="f['password'].invalid && f['password'].touched">
+                        <div *ngIf="f['password'].errors && f['password'].errors['required']">
+                            Password is Required
+                        </div>
+                        </div>
+                </div>
+               
+                <div class="form-group col">
+                    <label >confirm Password</label>
+                    <input type="password" class="form-control" name="confirmpass" formControlName="confirmpass" [class.is-invalid]="f['confirmpass'].invalid && f['confirmpass'].touched">
+                    <div class="alert alert-danger" *ngIf="f['confirmpass'].invalid && f['confirmpass'].touched">
+                        <div *ngIf="f['confirmpass'].errors && f['confirmpass'].errors['required']">
+                            confirm Password is Required
+                        </div>
+                        </div>
+                </div>
+             
+                </div>
+               
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" name="empstatue" formControlName="empstatue">
+                            <label >Active</label>
+                                                </div>
+                    </div>
+            
+                  
+                </div>
+
+                <div class="row mt-2">
+                    <div class="form-group text-center">
+                        <button class="btn btn-success me-2" [class.disabled]="empolyeeForm.invalid" type="submit">{{Buttontext}}</button>
+                        <button class="btn btn-warning me-2"  type="button" (click)="resetbtn()">Reaset</button>
+                        <button class="btn btn-danger" type="button" (click)="canclebtn()">Cancle</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header bg-info">
+        <h6>Empoyee List</h6>
+    </div>
+<div class="card-body">
+    <div class="row">
+        <table class="table table-bordered table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th> Department</th>
+                    <th>Employee Name</th>
+                    <th>Mobile</th>
+                    <th>Gender</th>
+                    <th>Joning Date</th>
+                    <th>Email</th>
+                    <th class="text-center">Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employees">
+                    <td>
+                        {{emp.department}}
+                    </td>
+                    <td>{{emp.empName}}</td>
+                    <td>{{emp.mobile}}</td>
+                    <td>{{emp.gender}}</td>
+                    <td>{{emp.joiningDate}}</td>
+                    <td>{{emp.email}}</td>
+                    <td  class="text-center">
+                    
+                        <i class="fa fa-edit text-primary me-2"(click)="edit(emp.id)" ></i>
+                        <i class="fa fa-info text-info me-2"></i>
+                        <i class="fa fa-trash-o text-danger"(click)="Deleat(emp.id)" ></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+  </div>

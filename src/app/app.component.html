@@ -1,0 +1,15 @@
+<!-- <app-navber></app-navber>
+<app-insert-form></app-insert-form> -->
+<div class="container-fluid g-0">
+  <app-header (sidenavtoggled)="sidenavStatus= $event;"></app-header>
+
+  <main>
+    <app-sidenav [sidenavStatus]="sidenavStatus" [ngClass]="{'app-side-nav-open':sidenavStatus}"></app-sidenav>
+    <div class="display-area p-3" [ngClass]="{'display-area-shrink':sidenavStatus}">
+      <p class="fs-1 fs-bold fst-italic">Main Display Area</p>
+      <app-insert-form></app-insert-form>
+    </div>
+  </main>
+</div>
+
+<!-- <app-sidenav></app-sidenav> -->
